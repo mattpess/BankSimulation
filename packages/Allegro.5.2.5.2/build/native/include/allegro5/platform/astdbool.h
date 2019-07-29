@@ -8,22 +8,28 @@
  *                                           /\____/
  *                                           \_/__/
  *
- *      Android-specific header defines.
+ *      A header file to get C99's stdbool.h.
  *
+ *      By Peter Wang.
+ * 
  *      See readme.txt for copyright information.
  */
 
+#ifndef __al_included_allegro5_astdbool_h
+#define __al_included_allegro5_astdbool_h
 
-#ifndef ALLEGRO_ANDROID
-   #error bad include
+#ifndef __cplusplus
+#  ifdef ALLEGRO_HAVE_STDBOOL_H
+#     include <stdbool.h>
+#  else
+#     ifndef ALLEGRO_HAVE__BOOL
+         typedef unsigned char _Bool;
+#     endif
+#     define bool _Bool
+#     define false 0
+#     define true 1
+#     define __bool_true_false_are_defined 1
+#  endif
 #endif
 
-#include <fcntl.h>
-
-#ifdef __cplusplus
-extern "C" int main(int argc, char ** argv);
-#else
-extern int main(int argc, char ** argv);
 #endif
-
-/* Nothing left */

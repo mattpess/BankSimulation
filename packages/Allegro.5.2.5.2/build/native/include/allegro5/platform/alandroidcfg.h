@@ -8,22 +8,18 @@
  *                                           /\____/
  *                                           \_/__/
  *
- *      Android-specific header defines.
+ *      Configuration defines for use on Android platforms.
+ *
+ *      By Thomas Fjellstrom.
  *
  *      See readme.txt for copyright information.
  */
 
+/* Describe this platform.  */
+#define ALLEGRO_PLATFORM_STR  "Android"
 
-#ifndef ALLEGRO_ANDROID
-   #error bad include
-#endif
+#define ALLEGRO_EXTRA_HEADER "allegro5/platform/alandroid.h"
+#define ALLEGRO_INTERNAL_HEADER "allegro5/platform/aintandroid.h"
+#define ALLEGRO_INTERNAL_THREAD_HEADER "allegro5/platform/aintuthr.h"
 
-#include <fcntl.h>
-
-#ifdef __cplusplus
-extern "C" int main(int argc, char ** argv);
-#else
-extern int main(int argc, char ** argv);
-#endif
-
-/* Nothing left */
+#define ALLEGRO_EXCLUDE_GLX

@@ -8,22 +8,22 @@
  *                                           /\____/
  *                                           \_/__/
  *
- *      Android-specific header defines.
+ *      Configuration defines for use on Raspberry Pi platforms.
+ *
+ *      By Trent Gamblin.
  *
  *      See readme.txt for copyright information.
  */
 
-
-#ifndef ALLEGRO_ANDROID
-   #error bad include
-#endif
-
 #include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
 
-#ifdef __cplusplus
-extern "C" int main(int argc, char ** argv);
-#else
-extern int main(int argc, char ** argv);
-#endif
+/* Describe this platform.  */
+#define ALLEGRO_PLATFORM_STR  "RaspberryPi"
 
-/* Nothing left */
+#define ALLEGRO_EXTRA_HEADER "allegro5/platform/alraspberrypi.h"
+#define ALLEGRO_INTERNAL_HEADER "allegro5/platform/aintraspberrypi.h"
+#define ALLEGRO_INTERNAL_THREAD_HEADER "allegro5/platform/aintuthr.h"
+
+#define ALLEGRO_EXCLUDE_GLX

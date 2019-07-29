@@ -8,22 +8,18 @@
  *                                           /\____/
  *                                           \_/__/
  *
- *      Android-specific header defines.
+ *      Raspberry Pi-specific header defines.
  *
  *      See readme.txt for copyright information.
  */
 
 
-#ifndef ALLEGRO_ANDROID
+#ifndef ALLEGRO_RASPBERRYPI
    #error bad include
 #endif
 
-#include <fcntl.h>
-
-#ifdef __cplusplus
-extern "C" int main(int argc, char ** argv);
-#else
-extern int main(int argc, char ** argv);
+#ifdef ALLEGRO_LIB_BUILD
+#include "allegro5/platform/aintuthr.h"
 #endif
 
 /* Nothing left */

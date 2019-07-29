@@ -8,22 +8,16 @@
  *                                           /\____/
  *                                           \_/__/
  *
- *      Android-specific header defines.
+ *      Unix-specific header defines.
  *
  *      See readme.txt for copyright information.
  */
 
 
-#ifndef ALLEGRO_ANDROID
+#ifndef ALLEGRO_UNIX
    #error bad include
 #endif
 
-#include <fcntl.h>
-
-#ifdef __cplusplus
-extern "C" int main(int argc, char ** argv);
-#else
-extern int main(int argc, char ** argv);
-#endif
 
 /* Nothing left */
+
